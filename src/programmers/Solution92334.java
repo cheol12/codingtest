@@ -12,7 +12,7 @@ class Solution92334 {
         // report = 이용자가 신고한 id 배열
         // k = 정지 당하는 신고 횟수 기준
 //      https://rovictory.tistory.com/59
-        int[] answer = new int[id_list.length]; // 메일 받은 횟수
+        int[] answer = new int[id_list.length]; // 모든 이용자들 각각 메일 받은 횟수
 
         // HashSet 성질로 '신고 당한 사람의 배열 객체인 report' 안에 중복 제거
         HashSet<String> reportSet = new HashSet<>();
