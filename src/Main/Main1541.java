@@ -18,7 +18,7 @@ class Main1541 {
 
         String a = br.readLine();
         int sum = 0;
-        String b[] = a.split("-");
+        String b[] = a.split("-");  // 최소로 만들기 위해 '-' 기준으로 묶어서 뺄셈 극대화
 
         // 1. 더한 걸 배열객체 b에 대체하기
 //        for(int i=0; i<b.length; i++){
@@ -37,36 +37,36 @@ class Main1541 {
 
 
         // 2. 새로운 배열객체에 더한 값 넣기
-//        int[] d = new int[b.length];
-//
-//        for(int i=0; i<b.length; i++){
-//            String[] c = b[i].split("\\+");
-//            for(int j=0; j<c.length; j++){
-//                d[i] += Integer.parseInt(c[j]);
-//            }
-//            if(i==0) sum += d[i];
-//            else if(i>0) sum -= d[i];
-//        }
+        int[] d = new int[b.length];
+
+        for(int i=0; i<b.length; i++){
+            String[] c = b[i].split("\\+");
+            for(int j=0; j<c.length; j++){
+                d[i] += Integer.parseInt(c[j]);
+            }
+            if(i==0) sum += d[i];
+            else if(i>0) sum -= d[i];
+        }
 
         // 3. 하루코딩 풀이
-
-            for(int i=0; i<b.length; i++){
-                int temp = mysum(b[i]);
-                if(i==0) answer += temp;
-                else answer -= temp;
-            }
-            bw.write(String.valueOf(answer));
+//
+//            for(int i=0; i<b.length; i++){
+//                int temp = mysum(b[i]);
+//                if(i==0) answer += temp;
+//                else answer -= temp;
+//            }
+//            bw.write(String.valueOf(answer));
         bw.write(String.valueOf(sum));
         bw.close();
     }
 
     // 하루코딩 풀이
-    private static int mysum(String f){
-        int sum2 = 0;
-        String[] temp = f.split("\\+");
-        for(int i=0; i<temp.length; i++){
-            sum2 += Integer.parseInt(temp[i]);
-        }
-        return sum2;
-    }
+//    private static int mysum(String f){
+//        int sum2 = 0;
+//        String[] temp = f.split("\\+");
+//        for(int i=0; i<temp.length; i++){
+//            sum2 += Integer.parseInt(temp[i]);
+//        }
+//        return sum2;
+//    }
 }
