@@ -15,6 +15,7 @@ public class Main16953 {
         // 1을 수의 가장 오른쪽에 추가한다.
         // A를 B로 바꾸는데 필요한 연산의 최솟값을 구해보자.
 
+        // 입력 : 첫째 줄에 A, B (1 ≤ A < B ≤ 109)가 주어진다.
         // 출력 : A를 B로 바꾸는데 필요한 연산의 최솟값에 1을 더한 값을 출력한다.
         // 만들 수 없는 경우에는 -1을 출력한다.
 
@@ -26,32 +27,27 @@ public class Main16953 {
         int A = Integer.parseInt(token.nextToken());
         int B = Integer.parseInt(token.nextToken());
 
-        // 마지막이 1이면 1없애기, 2의 배수면 2로 나누기, 아니면(=else=홀수면) -1 바로 출력
+        int count = 0;  // 연산 횟수 저장 객체
 
-        String c = String.valueOf(B);
-        Integer e = Integer.parseInt(c);
+        // 마지막이 1이면 1없애기, 2의 배수면 2로 나누기, A = B 안되면 -1 바로 출력하는 반복문
+        while(A != B){
 
-        while(A != Integer.parseInt(c)) {
-            if (c.charAt(c.length() - 1) == '1') {
-                c = c.substring(0, c.length() - 1);
-            }
-            else if(Integer.parseInt(c) % 2 == 0){
-                c = String.valueOf(Integer.parseInt(c) / 2);
-            }
-            else{
-                bw.write("-1");
+            // (B의 1의 자리가 1 or B가 2의 배수)인 것도 아닌 경우, 혹은 B가 A보다 작아졌으면
+            if( !((B % 10 == 1) || (B % 2 == 0)) || (B < A) ){
+                count = -2;     // count를 -1로 출력하기 위해 -2로 설정,
+                break;          // 반복문 break.
+
+            }else if( B % 2 == 0 ){     // B가 2의 배수이면
+                B /= 2;                 // 연산 실행
+                count += 1;             // 연산 횟수 +1
+
+            }else if( B % 10 == 1 ){    // B의 1의 자리가 1
+                B /= 10;                // 연산 실행
+                count += 1;             // 연산 횟수 +1
             }
         }
-        char d[] = c.toCharArray();
 
-        int count = 0;
-        if(d[d.length-1] == '1'){
-            ;
-        }
-
-
-        bw.write(Arrays.toString(d));
-
+        bw.write(String.valueOf(count + 1));    // 연산 최소 횟수에 1 더한 값 출력
         bw.close();
     }
 
