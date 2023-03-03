@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.*;
 
 public class Main1389 {
-    // 그리디 알고리즘
 
     public static void main(String args[]) throws IOException{
 
@@ -54,6 +53,7 @@ public class Main1389 {
         for(int k=1; k<=N; k++){
             for(int i=1; i<=N; i++){
                 for(int j=1; j<=N; j++){
+
                     c[i][j] = Math.min(c[i][j], c[i][k] + c[k][j]);
                 }
             }
@@ -65,19 +65,25 @@ public class Main1389 {
         // 앞선 반복문에서 연결되었다고 결론 지은 관계를
         // 부정하는 경우가 생길 수 있다.
 
-        count.add(INF); // 0인덱스에 값 채우기
-        for(int i=1; i<N; i++){
-            int count1 = 0;
-            for(int j=1; j<N; j++){
-                count1 += c[i][j];
-            }
-            if(){
+        int res = INF;  // 연결 가능 친구의 수 표시할 객체(임의로 초기값 설정) = count1들 중 최소값
+        int idx = -1;   // 해당
 
+        count.add(INF); // 0 인덱스에 값 채우기
+
+        // i번째 유저마다 친구 관계로 연결될 수 있는 유저 수 표시
+        for(int i=1; i<=N; i++){
+            int count1 = 0;
+            for(int j=1; j<=N; j++){
+                count1 += c[i][j];  // count1 = i번째 유저의 연결 가능한 친구 수
+            }
+
+            if(res > count1){   // i번째 유저의 count1값과 최소값으로 설정될 res값 비교하며 갱신
+                res = count1;   // 현재 비교한 count1이 더 작으면 해당 count1값을 res에 갱신
+                idx = i;        // 해당 i를 출력할 idx에 넣기
             }
         }
 
-
-        bw.write(Arrays.deepToString(c));
+        bw.write(String.valueOf(idx));
         bw.close();
     }
 
