@@ -3,6 +3,12 @@ package Main;
 import java.io.*;
 import java.util.*;
 
+//그래프 이론
+//그래프 탐색
+//트리
+//너비 우선 탐색
+//깊이 우선 탐색
+
 public class Main11725 {
     static int[] parents;       // 부모노드
 
@@ -14,7 +20,7 @@ public class Main11725 {
     // 판단한다.
     // => ArrayList<Integer>[] a = new ArrayList[N+1];
     // 1 ~ N+1 까지 각 배열을 초기화 함과 동시에 생성한다.
-    // a[i] = new ArrayList<>();
+    // a [i] = new ArrayList<>();
 
     // 3. Queue 객체에 초기 부모노드로 설정된 값을 poll() 하며 parents[i]에 i의 부모노드를 입력.
     // 해당 i를 다음 부모노드로 설정하며 반복문 진행
@@ -49,7 +55,7 @@ public class Main11725 {
 
         q.add(1);   // 처음 루트 노드 설정. = 현재 부모 노드 설정.
 
-        // 디버깅 중에 while문을을 패스하는 이는?
+        // 디버깅 중에 while문 무시하던데 이유를 모르겠음..
         while(!q.isEmpty()){    // 큐가 비게 되면 멈추기.
             int now = q.poll(); // 현재 부모 노드 설정. = 초기값은 1
 
