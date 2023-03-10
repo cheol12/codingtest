@@ -29,7 +29,6 @@ class Solution소수찾기 {
             }
 
         }
-
         return answer;
     }
     public static void main(String[] args){
