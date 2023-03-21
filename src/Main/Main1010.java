@@ -11,7 +11,8 @@ public class Main1010 {
     //"중복 없이 뽑는 것은 이해하겠는데, 다리가 교차되면 어떻게 되나요..?"
     //예로들어 (1, 2, 3, 4, 5) 에서 (1, 3, 4) 를 뽑았다고 해보자.
     //이는 (3, 1, 4)이나, (3, 4, 1) 등 순서가 다르게 뽑혀도 조합은 뽑는
-    //순서를 고려하지 않기 때문에 모두 1개의 경우로 보는 것이다.
+    //순서를 고려하지 않기 때문에 모두 1개의 경우로 보는 것이다. (교차 = 중복)
+
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
