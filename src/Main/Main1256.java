@@ -22,13 +22,14 @@ public class Main1256 {
         dict = new int[202][202];
 
         for(int i=0; i<=200; i++){
-            dict[i][0] = 1; // 총 i개인데 z를 0개 쓰는 것 = a를 i개 쓰는 것
-            dict[i][i] = 1; // 총 i개인데 a를 i개 쓰는 것 = z를 0개 쓰는 것
+            dict[i][0] = 1; // a+z가 총 i개인데 z를 0개 쓰는 것 = a를 i개 쓰는 것
+            dict[i][i] = 1; // a+z가 총 i개인데 z를 i개 쓰는 것 = a를 0개 쓰는 것
         }
 
         // "a" 3개와 "z" 3개로 만든 문자열 ( 아래처럼 해석 가능 )
         // => ("a" 3개와 "z" 2개로 만든 문자열) + ("a" 2개와 "z" 3개로 만든 문자열)
 
+        // i - a개수, j - b개수
         for(int i=2; i<=200; i++){
             for(int j=1; j<i; j++){
                 dict[i][j] = dict[i-1][j-1] + dict[i-1][j];
@@ -38,10 +39,10 @@ public class Main1256 {
         }
 
         // N+M = 총 문자 개수, M = z문자 개수 라고 할 때,
-        // dict[N+M][M] = 총 N개 중 M개를 z로 선택했을 때 만들 수 있는 문자열의 개수
+        // dict[N+M][M] = N+M개 중 z가 M개일 때 만들 수 있는 문자열의 개수
         if(dict[N+M][M] < K) bw.write(String.valueOf("-1"));
         else{
-            // 총 개수도 z개수도 모두 사용할 때까지 반복하자
+            // a,z 모두 사용할 때까지 반복하자
             while(!(N == 0 && M == 0)){
 
                 // 총 개수 N+M 중 하나를 a로 선택하면 N+M에서 -1
