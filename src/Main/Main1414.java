@@ -3,15 +3,14 @@ package Main;
 import java.io.*;
 import java.util.*;
 
-public class Main1414 {
+class Main1414 {
     // 그래프 이론
     // 문자열
     // 최소 스패닝 트리
 
     static int[] parent;    // 부모 노드
     static int N,sum;           // 입력할 컴퓨터 개수, 랜선 길이 총합
-    static PriorityQueue<pEdge> queue;
-    // 랜선 정보 저장할 우선순위 큐
+    static PriorityQueue<pEdge> queue;  // 랜선 정보 저장할 우선순위 큐
 
     public static void main(String args[]) throws IOException{
         //최소 스패닝 트리는, 주어진 그래프의 모든 정점들을 연결하는
@@ -110,34 +109,34 @@ public class Main1414 {
         // a와 b의 대표 노드가 다를 때만 a와 b를 연결
         // a와 b의 대표 노드가 같다면 사이클이 만들어져서 가중치의 합이 최소가 될 수 없다.
     }
-}
 
-// 시작점s, 끝점e, 가중치v 를 표현하는 클래스 pEdge를 생성하고
+     // 시작점s, 끝점e, 가중치v 를 표현하는 클래스 pEdge를 생성하고
 // 가중치 기준으로 오름차순 정렬한다.
-class pEdge implements Comparable<pEdge>{
-    int s;
-    int e;
-    int v;
-    pEdge(int s, int e, int v){
-        this.s = s;
-        this.e = e;
-        this.v = v;
-    }
-    // 우선순위 큐에서 우선순위가 되는 조건 = 가중치 오름차순 정렬
-    @Override
-    public int compareTo(pEdge o){
-        return this.v - o.v;
-    }
-    //현재 객체 < 파라미터로 넘어온 객체: 음수 리턴
-    //현재 객체 == 파라미터로 넘어온 객체: 0 리턴
-    //현재 객체 > 파라미터로 넘어온 객체: 양수 리턴
-    //음수 또는 0이면 객체의 자리가 그대로 유지되며, 양수인 경우에는 두 객체의 자리가 바뀐다.
-    //큐 특성 = 선입선출,
-    //문제에서 오름차순 정렬 기준으로 큐에 입력해야한다.
+    static class pEdge implements Comparable<pEdge>{
+        int s;
+        int e;
+        int v;
+        pEdge(int s, int e, int v){
+            this.s = s;
+            this.e = e;
+            this.v = v;
+        }
+        // 우선순위 큐에서 우선순위가 되는 조건 = 가중치 오름차순 정렬
+        @Override
+        public int compareTo(pEdge o){
+             return this.v - o.v;
+         }
+        //현재 객체 < 파라미터로 넘어온 객체: 음수 리턴
+        //현재 객체 == 파라미터로 넘어온 객체: 0 리턴
+        //현재 객체 > 파라미터로 넘어온 객체: 양수 리턴
+        //음수 또는 0이면 객체의 자리가 그대로 유지되며, 양수인 경우에는 두 객체의 자리가 바뀐다.
+        //큐 특성 = 선입선출,
+        //문제에서 오름차순 정렬 기준으로 큐에 입력해야한다.
 
-    //현재 객체보다 새로 들어온 파라미터 객체가 더 작다면,
-    //서로 자리를 바꿔서 파라미터가 더 빨리 출력되게끔 한다.
-    //큐의 선입선출 특성상 현재 객체가 더 빨리 출력되어야 하지만,
-    //오름차순 정렬 조건이 추가된 우선순위 큐이기 때문에
-    //현재보다 더 작은 파라미터가 더 빨리 출력되어야 함.
+        //현재 객체보다 새로 들어온 파라미터 객체가 더 작다면,
+        //서로 자리를 바꿔서 파라미터가 더 빨리 출력되게끔 한다.
+        //큐의 선입선출 특성상 현재 객체가 더 빨리 출력되어야 하지만,
+        //오름차순 정렬 조건이 추가된 우선순위 큐이기 때문에
+        //현재보다 더 작은 파라미터가 더 빨리 출력되어야 함.
+    }
 }
