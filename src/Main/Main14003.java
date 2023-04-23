@@ -25,7 +25,7 @@ class Main14003{
             suyeol2[i] = new ArrayList<>();
         }
 
-        int suyeol_position = 1;
+        int suyeol_position = 0;
         suyeol[1] = 1;
         suyeol2[1].add(A[1]);
         for(int i=2; i<=N; i++){
@@ -53,12 +53,13 @@ class Main14003{
             suyeol2[i].add(A[i]);
             // 부분 수열 개수를 나타내는 객체를 따로 저장.
 
-            if(suyeol2[i].size() > suyeol_position)
+            // 가장 긴 부분수열의 위치 suyeol_position
+            if(suyeol2[i].size() > suyeol2[i-1].size())
                 suyeol_position = i;
         }
 
-        bw.write(String.valueOf(suyeol2[suyeol_position]));
-        bw.write(Arrays.toString(suyeol2)+"\n");
+        bw.write(suyeol2[suyeol_position].size()+"\n");
+        bw.write(suyeol2[suyeol_position]+"");
         bw.close();
     }
 }
