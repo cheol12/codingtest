@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.*;
 
 public class Main17219 {
-
     static int N,M;
 
     public static void main(String[] args) throws IOException {
