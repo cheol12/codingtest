@@ -32,7 +32,7 @@ public class Main2193 {
         }
 
         bw.write(String.valueOf(D[N][0]+D[N][1]));
-        bw.write("\n" + String.valueOf(ex[N]));
+        bw.write("\n" + ex[N]);
         bw.close();
     }
 }
