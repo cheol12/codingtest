@@ -38,8 +38,7 @@ class Main11049{
                 dp[i][j] = Integer.MAX_VALUE;   // 초기화
                 for(int k = i; k<j; k++){
                     dp[i][j] = Math.min(dp[i][j],
-                            dp[i][k] + dp[k+1][j]
-                                    + (matrix[i][0]*matrix[k][1]*matrix[j][1]));
+                            dp[i][k] + dp[k+1][j] + (matrix[i][0]*matrix[k][1]*matrix[j][1]));
                 }
             }
         }
