@@ -94,10 +94,10 @@ public class Main15686 {
         // 전부 구하면서 return 직전에 최소값 계속 갱신하며 return;
 
         // DFS(start+1, count+1)로 하면 답은 같은데 시간 초과가 난다 왜?
-        // i+1로 하면 return을 안해도 된다
+        // 또 DFS(i+1, count+1)로 하면 위에서 return을 안해도 실행된다
         for(int i = start; i<chicken.size(); i++){
             open[i] = true;
-            DFS(start + 1, count + 1);
+            DFS(i + 1, count + 1);
             open[i] = false;
         }
     }
