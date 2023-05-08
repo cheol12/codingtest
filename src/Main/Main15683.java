@@ -193,3 +193,4 @@ public class Main15683 {
         answer = Math.min(answer, cnt);
     }
 }
+//https://minhamina.tistory.com/134

@@ -3,7 +3,7 @@ package Main;
 import java.io.*;
 import java.util.*;
 
-public class Main11729 {
+public class Main11279 {
     static int N,x;
     static PriorityQueue<Integer> array;
     public static void main(String[] args) throws IOException {
