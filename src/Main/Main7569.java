@@ -15,7 +15,7 @@ class Main7569{
     static int[][][] box;
     static boolean[][][] visited;
     static int[] dz = {0, 0, 0, 0, -1, 1};
-    static int[] dx = {-1, 0, 1, 0, 0, 0};  // 좌 하 우 상 위 아래
+    static int[] dx = {-1, 0, 1, 0, 0, 0};  // 상 우 하 좌 아래 위
     static int[] dy = {0, 1, 0, -1, 0, 0};
     static int H, M, N;
     static Queue<Point> q;
