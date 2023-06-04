@@ -19,8 +19,7 @@ class Main10026{
         visited = new boolean[N][N];
 
         for(int i=0; i<N; i++){
-            String temp = br.readLine();
-            grid[i] = temp.toCharArray();
+            grid[i] = br.readLine().toCharArray();
         }
 
         int count = 0;      // 적록색약 아닐 때

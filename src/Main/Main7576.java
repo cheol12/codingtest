@@ -82,8 +82,7 @@ class Main7576 {
                 count = Math.max(count, board[i][j]);
             }
         }
-        if(count == 1) return 0;    // 이미 다 익은 상태라면 0 출력
-        else return count - 1;      // 아니면 count-1 해서 걸린 일수 출력
+        return count - 1;      // 아니면 count-1 해서 걸린 일수 출력
     }
 }
 //https://yongku.tistory.com/entry/%EB%B0%B1%EC%A4%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%B0%B1%EC%A4%80-7576%EB%B2%88-%ED%86%A0%EB%A7%88%ED%86%A0-%EC%9E%90%EB%B0%94Java
