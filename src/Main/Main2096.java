@@ -24,21 +24,14 @@ public class Main2096 {
             }
         }
 
-        for(int i=0; i<=N; i++){
-            board_max[i] = board[i].clone();
-            board_min[i] = board[i].clone();
-        }
+        for(int i=1; i<=N; i++) {
+            board_max[i][0] = Math.max(board_max[i - 1][0], board_max[i - 1][1]) + board[i][0];
+            board_max[i][1] = Math.max(Math.max(board_max[i - 1][0], board_max[i - 1][1]), board_max[i - 1][2]) + board[i][1];
+            board_max[i][2] = Math.max(board_max[i - 1][1], board_max[i - 1][2]) + board[i][2];
 
-        for(int i=2; i<=N; i++) {
-            board_max[i][0] += Math.max(board_max[i - 1][0], board_max[i - 1][1]);
-            board_max[i][1] += Math.max(Math.max(board_max[i - 1][0], board_max[i - 1][1]), board_max[i - 1][2]);
-            board_max[i][2] += Math.max(board_max[i - 1][1], board_max[i - 1][2]);
-        }
-
-        for(int i=2; i<=N; i++) {
-            board_min[i][0] += Math.min(board_min[i-1][0],board_min[i-1][1]);
-            board_min[i][1] += Math.min(Math.min(board_min[i-1][0],board_min[i-1][1]), board_min[i-1][2]);
-            board_min[i][2] += Math.min(board_min[i-1][1],board_min[i-1][2]);
+            board_min[i][0] = Math.min(board_min[i-1][0],board_min[i-1][1]) + board[i][0];
+            board_min[i][1] = Math.min(Math.min(board_min[i-1][0],board_min[i-1][1]), board_min[i-1][2]) + board[i][1];
+            board_min[i][2] = Math.min(board_min[i-1][1],board_min[i-1][2]) + board[i][2];
         }
 
         int result_max = Math.max(Math.max(board_max[N][0], board_max[N][1]), board_max[N][2]);
