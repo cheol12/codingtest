@@ -35,14 +35,23 @@ class Main1149 {
 
         // dp배열처럼 배열을 따로 복사하지 않고 본래 배열인 RGBdist 에서 그대로
         // 덧붙여가며 합을 구하는 방식 = 메모이제이션.
-       for(int i=1; i<=N; i++){
-            dp[i][0] += Math.min(RGBdist[i-1][1], RGBdist[i-1][2]);
-            dp[i][1] += Math.min(RGBdist[i-1][0], RGBdist[i-1][2]);
-            dp[i][2] += Math.min(RGBdist[i-1][0], RGBdist[i-1][1]);
+
+//        for(int i=1; i<=N; i++){
+//            dp[i][0] += Math.min(RGBdist[i-1][1], RGBdist[i-1][2]);
+//            dp[i][1] += Math.min(RGBdist[i-1][0], RGBdist[i-1][2]);
+//            dp[i][2] += Math.min(RGBdist[i-1][0], RGBdist[i-1][1]);
+//        }
+
+        // 메모이제이션 방식
+        for(int i=1; i<=N; i++){
+            RGBdist[i][0] += Math.min(RGBdist[i-1][1], RGBdist[i-1][2]);
+            RGBdist[i][1] += Math.min(RGBdist[i-1][0], RGBdist[i-1][2]);
+            RGBdist[i][2] += Math.min(RGBdist[i-1][0], RGBdist[i-1][1]);
         }
 
-        int result = Math.min(Math.min(dp[N][0], dp[N][1]), dp[N][2]);
-        bw.write(result+"");
+//        int result = Math.min(Math.min(dp[N][0], dp[N][1]), dp[N][2]);
+        int result2 = Math.min(Math.min(RGBdist[N][0], RGBdist[N][1]), RGBdist[N][2]);
+        bw.write(result2+"");
         bw.close();
     }
 }
