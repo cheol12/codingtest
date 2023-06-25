@@ -28,8 +28,10 @@ public class Main1629 {
         if(b == 0) return 1;
 
         long n = pow(a, b/2, mod);
-        if(b % 2 == 0) return n * n % mod;
-        else return (n * n % mod) * a % mod;
+        if(b % 2 == 0)
+            return n * n % mod;
+        else
+            return ((n * n % mod) * a) % mod;
     }
 
 }
