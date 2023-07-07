@@ -31,7 +31,7 @@ public class Main15649 {
         // = 동시에 하나의 DFS가 빠져나오는 조건
         if(x == M){
             for(int i=0; i<M; i++){ // M개만큼 출력해야함
-                bw.write(String.valueOf(a[i]) + " ");
+                bw.write(a[i] + " ");
             }
             bw.write("\n");
             return;                 // 해당 DFS 빠져나오기
