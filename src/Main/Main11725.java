@@ -55,7 +55,6 @@ public class Main11725 {
 
         q.add(1);   // 처음 루트 노드 설정. = 현재 부모 노드 설정.
 
-        // 디버깅 중에 while문 무시하던데 이유를 모르겠음..
         while(!q.isEmpty()){    // 큐가 비게 되면 멈추기.
             int now = q.poll(); // 현재 부모 노드 설정. = 초기값은 1
 
@@ -77,7 +76,7 @@ public class Main11725 {
             }
         }
         for(int i=2; i<=N; i++){
-            bw.write(String.valueOf(parents[i])+"\n");
+            bw.write(parents[i]+"\n");
         }
         bw.close();
     }
