@@ -18,7 +18,7 @@ public class Solution전화번호목록 {
         for(String temp : phone_book){
             hm.put(temp, 0);
         }
-// asd
+
         for(String temp : phone_book){
             for(int i=1; i<temp.length(); i++){
                 if(hm.containsKey(temp.substring(0, i)))
