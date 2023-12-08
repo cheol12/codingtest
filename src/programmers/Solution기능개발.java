@@ -34,10 +34,18 @@ public class Solution기능개발 {
 
             // 작업을 거치고 100이 넘었으면 연속된 인덱스이자 함께 완료된 배열 원소들을 큐에 넣는다.
             q = new ArrayDeque<>();
-            int j = i;
-            q.offer(j);
-            while(j < progresses.length-1 && progresses[++j] >= 100){
-                q.offer(j);
+
+//            밑 반복문과 똑같은 기능. 처음에 작성한건데 왜이리 보기 어렵게 생각했을까..
+//            int j = i;
+//            q.offer(j);
+//            while(j < progresses.length-1 && progresses[++j] >= 100){
+//                q.offer(j);
+//            }
+
+            for(int j=i; j<size; j++){
+                // 큐 원소 개수 판단을 위한 것
+                if(progresses[j] >= 100) q.offer(j);
+                else break;
             }
 
             // 한 번에 배포되는 작업들의 개수를 알기 위해 큐 사이즈 반환
