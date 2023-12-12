@@ -26,7 +26,6 @@ public class Solution프로세스 {
         for(int i=0; i<priorities.length; i++)
             q.offer(new ProcessQ(i, priorities[i]));
 
-
         // answerList.get(location) != null
         while(!q.isEmpty()){
             ProcessQ takeOutQ = q.poll();
@@ -45,10 +44,9 @@ public class Solution프로세스 {
                 completeList.add(takeOutQ.idx);
                 if(takeOutQ.idx == location) break;
             }
-
         }
 
-        answer = completeList.get(completeList.size()-1);
+        answer = completeList.size();
         return answer;
     }
 }
