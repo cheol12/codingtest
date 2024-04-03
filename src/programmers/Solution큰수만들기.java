@@ -40,6 +40,7 @@ public class Solution큰수만들기 {
 //            }
 //        }
 
+
         // StringBuilder 로 해야 시간초과 해결됨.
         StringBuilder answer = new StringBuilder();
 
