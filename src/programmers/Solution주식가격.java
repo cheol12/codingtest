@@ -15,14 +15,17 @@ public class Solution주식가격 {
         answer = new int[prices.length];
 
         for(int i=0; i<prices.length-1; i++){
-            int notDown = 0;
             for(int j=i+1; j<prices.length; j++){
-                notDown++;
+                answer[i]++;
                 if(prices[i] > prices[j]) break;
             }
-            answer[i] = notDown;
         }
-        answer[prices.length-1] = 0;
+        String aa = "";
+        int temp = 3;
+        aa += temp;
+
+        System.out.println(aa);
+
         return answer;
     }
 }

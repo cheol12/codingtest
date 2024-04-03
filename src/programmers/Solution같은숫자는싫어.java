@@ -5,7 +5,7 @@ import java.util.*;
 public class Solution같은숫자는싫어 {
     public static void main(String[] args) {
 
-        System.out.println(solution(new int[]{1, 1, 3, 3, 0, 1, 1}));
+        System.out.println(Arrays.toString(solution(new int[]{1, 1, 3, 3, 0, 1, 1})));
     }
 
     static int[] solution(int []arr) {
@@ -13,21 +13,37 @@ public class Solution같은숫자는싫어 {
         long beforeTime = System.nanoTime(); //코드 실행 전에 시간 받아오기
         int[] answer = {};
 
-        // 풀이 1 : 스택 방식
-        Stack<Integer> stack = new Stack<>();
-        stack.push(arr[0]);
+//        풀이 1 : 큐 방식 = 내가 생각한 방식 71~176ms
+        Queue<Integer> q = new ArrayDeque<>();
+        q.offer(arr[0]);
+
         for(int i=1; i<arr.length; i++){
-            if(stack.peek() != arr[i]){
-                stack.push(arr[i]);
-            }
-        }
-        answer = new int[stack.size()];
-
-        for(int i=0; i<stack.size(); i++){
-            answer[i] = stack.get(i);
+            if(arr[i-1] != arr[i]) q.offer(arr[i]);
         }
 
-//        풀이 2 : 더 빠른 방식 = 이전 수를 새로운 객체에 저장하며 비교한다.
+        int qSize = q.size();   // q.size()를 for문 조건에 넣으면 계속 변동되므로 객체로 생성
+        answer = new int[qSize];
+        for(int i=0; i<qSize; i++){
+            answer[i] = q.poll();
+        }
+
+
+        // 풀이 2 : 스택 방식 196~296ms
+//        Stack<Integer> stack = new Stack<>();
+//        stack.push(arr[0]);
+//        for(int i=1; i<arr.length; i++){
+//            if(stack.peek() != arr[i]){
+//                stack.push(arr[i]);
+//            }
+//        }
+//        answer = new int[stack.size()];
+//
+//        for(int i=0; i<stack.size(); i++){
+//            answer[i] = stack.get(i);
+//        }
+
+
+//        풀이 3 : 리스트 방식 78~194ms = 이전 수를 새로운 객체에 저장하며 비교한다.
 //        List<Integer> list = new ArrayList<>();
 //        int preNum = -1;
 //        for(int temp : arr){
