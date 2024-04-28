@@ -13,6 +13,7 @@ public class Solution구명보트 {
     }
 
     public static int solution(int[] people, int limit) {
+        // 구명보트의 개수
         int answer = 0;
 
         boolean[] visited = new boolean[people.length];

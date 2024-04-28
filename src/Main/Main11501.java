@@ -42,7 +42,7 @@ class Main11501{
                 if(stock[j] <= benePoint){
                     buyList.add(stock[j]);
                 }
-
+                
                 // else if 하지 않는 이유 : 상승세 유지 중 && j = 0 인 경우가 있기 때문
                 // 상승세가 아니거나 마지막 비교일 경우
                 if(stock[j] > benePoint || j == 0){
