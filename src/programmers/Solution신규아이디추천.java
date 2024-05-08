@@ -82,13 +82,13 @@ public class Solution신규아이디추천 {
         //7단계
         String step7 = step6;
 
+        // "ab" -> "abb"
         if(step7.length() <= 2){
             sb = new StringBuilder();
-            sb.append(step7);
+            sb.append(step7); // ab
             String s = step7.substring(step7.length() - 1);
             for(int i=0; i < 3 - step7.length(); i++){
-
-                sb.append(s);
+                sb.append(s); // ab + b
             }
             step7 = sb.toString();
         }
