@@ -47,6 +47,11 @@ public class Main1654 {
             else{
                 min = mid + 1;
             }
+            //802 3개
+            //743
+            //457
+            //
+            //
         }
         bw.write(min - 1 + "");
         bw.close();

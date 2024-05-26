@@ -63,8 +63,8 @@ public class Main2343 {
             // 남아있는 강의가 있으면 블루레이 하나 더 추가
             if(sum != 0) count++;
 
-            // 목표하는 블루레이 최소 개수보다 크면 다시 진행행
-           if(count > M) min = mid + 1;
+            // 목표하는 블루레이 최소 개수보다 크면 다시 진행
+            if(count > M) min = mid + 1;
             else max = mid - 1;
         }
         bw.write(min + "");
