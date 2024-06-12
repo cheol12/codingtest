@@ -69,16 +69,12 @@ public class Solution배달 {
         }
     }
     static List<Node>[] townList;
-    static Set<Integer> set;
     static int answer = 1;
 
     private static int solution(int N, int[][] road, int K) {
 
         // townList[i] = i번째 마을에 있는 도로들
         townList = new ArrayList[N+1];
-
-        // 배달 가능한 마을 번호
-        set = new HashSet<>();
 
         int[] visited = new int[N+1];
 
@@ -102,6 +98,8 @@ public class Solution배달 {
 
         return answer;
     }
+//    https://rovictory.tistory.com/122
+
 
     // 혼자 풀이한 것 87.5
 //    static void searchTown(int start, int tempK){
