@@ -81,8 +81,8 @@ public class Main21608 {
             // 자리 리스트 중 가장 끝에 있는 것이 우선순위 1등 자리
             Collections.sort(list);
 
-            // 자리 선정 완료료
-           classRoom[list.get(list.size()-1).x][list.get(list.size()-1).y] = studentArr[i];
+            // 자리 선정 완료
+            classRoom[list.get(list.size()-1).x][list.get(list.size()-1).y] = studentArr[i];
         }
 
         // 2. 점수 합산
