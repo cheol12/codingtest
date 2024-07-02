@@ -20,15 +20,15 @@ class Main15649_1{
         visited = new boolean[N+1];
         arr = new int[M+1];
 
-        DFS(0);
+        DFS(1);
 
         bw.close();
     }
 
     static void DFS(int printCount) throws IOException{
         // 출력 개수가 M이 되면 출력 후 리턴.
-        if(printCount == M) {
-            for(int i=0; i<M; i++){
+        if(printCount > M) {
+            for(int i=1; i<=M; i++){
                 bw.write(arr[i]+ " ");
             }
             bw.write("\n");
